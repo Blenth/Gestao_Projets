@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <style>
+        /* Estilos gerais da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container principal */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            margin: 20px;
+        }
+
+        /* Título da lista */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Tabela de produtos */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        /* Cabeçalho da tabela */
+        th {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Células da tabela */
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* Linha par e ímpar da tabela */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Botão de ação */
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Lista de Produtos</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Smartphone XYZ</td>
+                    <td>R$ 1.299,00</td>
+                    <td>Smartphone com 128GB de armazenamento e câmera de 48MP</td>
+                    <td><button class="btn">Comprar</button></td>
+                </tr>
+                <tr>
+                    <td>Notebook ABC</td>
+                    <td>R$ 2.499,00</td>
+                    <td>Notebook com 16GB de RAM e processador Intel i7</td>
+                    <td><button class="btn">Comprar</button></td>
+                </tr>
+                <tr>
+                    <td>Fone de Ouvido Bluetooth</td>
+                    <td>R$ 199,00</td>
+                    <td>Fones de ouvido sem fio com cancelamento de ruído</td>
+                    <td><button class="btn">Comprar</button></td>
+                </tr>
+                <tr>
+                    <td>Smartwatch 4.0</td>
+                    <td>R$ 899,00</td>
+                    <td>Smartwatch com monitoramento de saúde e GPS integrado</td>
+                    <td><button class="btn">Comprar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
