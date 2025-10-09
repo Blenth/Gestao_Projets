@@ -5,9 +5,10 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.home, name='home'),  # rota raiz
-    path('home/', views.home, name='home'),  # opcional
-    path('<int:id>/', views.produto_detail, name='produto_detail')
+    path('', views.home, name='Home'),
+    path('Login/', views.Login, name='Login'),  # rota raiz
+    path('ListProduct/', views.List_Prooduct, name='ListOgject'),  # opcional
+    path('produto/<int:numero>/', views.exibir_produto, name='exibir_produto')
 ]
 
 '''
