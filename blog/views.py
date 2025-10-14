@@ -4,10 +4,10 @@ from django.shortcuts import render, get_object_or_404
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 def Login(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 def List_Prooduct(request):
     return render(request, 'listProduct.html')  # ou qualquer template que você tenha

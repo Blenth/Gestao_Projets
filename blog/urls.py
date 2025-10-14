@@ -10,7 +10,7 @@ urlpatterns = [
     path('ListProduct/', views.List_Prooduct, name='ListOgject'),  # opcional
     path('produto/<str:lanche>/', views.exibir_produto, name='exibir_produto')
 ]
-
+    
 '''
 urlpatterns = [
         # ... other URL patterns
