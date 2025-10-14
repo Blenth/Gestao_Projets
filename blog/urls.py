@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.home, name='Home'),
     path('Login/', views.Login, name='Login'),  # rota raiz
     path('ListProduct/', views.List_Prooduct, name='ListOgject'),  # opcional
-    path('produto/<int:numero>/', views.exibir_produto, name='exibir_produto')
+    path('produto/<str:lanche>/', views.exibir_produto, name='exibir_produto')
 ]
 
 '''

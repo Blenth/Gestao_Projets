@@ -1,7 +1,6 @@
 # blog/views.py
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
-from .models import Produto
 
 
 def home(request):
@@ -14,6 +13,23 @@ def List_Prooduct(request):
     return render(request, 'listProduct.html')  # ou qualquer template que você tenha
 
 
-def exibir_produto(request, numero):
-    contexto = {'numero_produto': numero}
+def exibir_produto(request, lanche):
+    img = Comida(lanche)
+    contexto = {
+        'numero_produto': lanche,
+        'objeto_imagem_url' : img
+        }
     return render(request, 'produto.html', contexto)
+
+
+
+def Comida(status_code: str) -> str:
+    match status_code:
+        case "cafe":
+            return "https://static.vecteezy.com/ti/fotos-gratis/t2/25282026-estoque-do-misturar-uma-copo-cafe-cafe-com-leite-mais-motivo-topo-visao-comidagrafia-generativo-ai-foto.jpg"
+        case "pao":
+            return "https://guiadacozinha.com.br/wp-content/uploads/2018/10/paofrancesfolhado.jpg"
+        case "suco":
+            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFmmPGSvmdIzDXKXhcRcXwgxQTrtju5mo3w&s"
+        case _:  
+            return "Unknown Status"
