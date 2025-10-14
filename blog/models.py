@@ -11,9 +11,10 @@ class Post(models.Model):
         return self.titulo
 
 
+
 class Pessoa(models.Model):
     nome = models.CharField(max_length=255, verbose_name=u'Nome')
-    cpf = models.CharField(max_length=15, verbose_name=u'CPF')
+    cpf = models.CharField(max_length=15, verbose_name=u'CPF', unique=True)
     email = models.EmailField(verbose_name=u'Email')
     telefone = models.CharField(max_length=30, verbose_name=u'Telefone', null=True)
     data_nascimento = models.DateField(verbose_name=u'Data de nascimento')
