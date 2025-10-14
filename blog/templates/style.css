@@ -76,7 +76,7 @@ body {
   column-gap: 5px;
 }
 .gender input {
-  accent-color: rgb(130, 106, 251);
+  accent-color: rgb(0, 0, 0);
 }
 .form :where(.gender input, .gender label) {
   cursor: pointer;
