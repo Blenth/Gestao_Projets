@@ -31,5 +31,7 @@ def Comida(status_code: str) -> str:
             return "https://guiadacozinha.com.br/wp-content/uploads/2018/10/paofrancesfolhado.jpg"
         case "suco":
             return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFmmPGSvmdIzDXKXhcRcXwgxQTrtju5mo3w&s"
+        case "V8":
+            return "https://www.motortrend.com/uploads/sites/21/2012/11/1211phr-01-the-biggest-big-block-on-the-planet-1005ci-engine.jpg?w=768&width=768&q=75&format=webp"
         case _:  
             return "Unknown Status"
