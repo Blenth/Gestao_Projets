@@ -10,7 +10,7 @@ def Login(request):
     return render(request, 'Login.html')
 
 def List_Prooduct(request):
-    return render(request, 'listProduct.html')  # ou qualquer template que você tenha
+    return render(request, 'List.html')  # ou qualquer template que você tenha
 
 
 def exibir_produto(request, lanche):
