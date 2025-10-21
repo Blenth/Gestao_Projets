@@ -106,56 +106,12 @@
     }
 
     /* ======= GRID DE PRODUTOS ======= */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-
-    .card {
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
-      max-width: 220px;
-      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card img {
-      width: 100%;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .card-content {
-      padding: 10px;
-    }
-
-    .card-content h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .card-content p {
-      margin: 5px 0;
-      color: gray;
-    }
-
-    .card-actions {
-      display: flex;
-      justify-content: space-around;
-      padding: 10px;
-    }
+    
 
     .btn {
       border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
+      padding: 58px 12px;
+      border-radius: 8px;
       cursor: pointer;
       text-transform: uppercase;
       font-size: 12px;
@@ -186,11 +142,97 @@
       font-size: 14px;
     }
 
-    @media (min-width: 1000px) {
-      .cards {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
+    .cards-section {
+  width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.titulo-secao {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tabela-cards {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+.tabela-cards td {
+  vertical-align: top;
+}
+
+.card {
+  background: #fff;
+  width: 250px;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* sombra mais visível */
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35); /* sombra mais forte */
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 30px 0 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0 0 30px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+button.info,
+button.controlar {
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+/* Botão preto */
+button.info {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Botão verde */
+button.controlar {
+  background-color: #00ff00;
+  color: #ffffffff;
+}
+
+/* Hover (inversão das cores) */
+button.info:hover,
+button.controlar:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+    
+    
   </style>
 </head>
 
@@ -215,74 +257,26 @@
 
 
 
-    <div class="cards" id="product-list">
-      <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqamfzWp3WFWBasP48uYpX6HFo5DZ9TPjF9Q0g2TaoWSOP3Kl_E6Cm5qz5E4OXXocAY1g&usqp=CAU" alt="Café">
-        <div class="card-content">
-          <h2>Café</h2>
+   <div class="cards-section">
+  <h2 class="titulo-secao">Lista de Produtos</h2>
+
+  <table class="tabela-cards">
+
+    <tr>
+      <td>
+        <div class="card">
+          <img src="https://s2-g1.glbimg.com/cSwyuz3Gg0t6TBKAHzkq68v81r4=/0x0:4479x2686/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/A/0/8Tz12FRCKuANsWHn0bYQ/adobestock-1210523825-1-.jpeg" alt="Café">
+          <h3>Café</h3>
           <p>30 Und</p>
+          <div class="botoes">
+            <button class="info">INFO</button>
+            <button class="controlar">CONTROLAR</button>
+          </div>
         </div>
-        <div class="card-actions">
-          <button class="btn btn-dark">Info</button>
-          <button class="btn btn-sucess">Controle</button>
-        </div>
-      </div>
-       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqamfzWp3WFWBasP48uYpX6HFo5DZ9TPjF9Q0g2TaoWSOP3Kl_E6Cm5qz5E4OXXocAY1g&usqp=CAU" alt="Café">
-        <div class="card-content">
-          <h2>Café</h2>
-          <p>30 Und</p>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-dark">Info</button>
-          <button class="btn btn-sucess">Controle</button>
-        </div>
-      </div>
-       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqamfzWp3WFWBasP48uYpX6HFo5DZ9TPjF9Q0g2TaoWSOP3Kl_E6Cm5qz5E4OXXocAY1g&usqp=CAU" alt="Café">
-        <div class="card-content">
-          <h2>Café</h2>
-          <p>30 Und</p>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-dark">Info</button>
-          <button class="btn btn-sucess">Controle</button>
-        </div>
-      </div>
-       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqamfzWp3WFWBasP48uYpX6HFo5DZ9TPjF9Q0g2TaoWSOP3Kl_E6Cm5qz5E4OXXocAY1g&usqp=CAU" alt="Café">
-        <div class="card-content">
-          <h2>Café</h2>
-          <p>30 Und</p>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-dark">Info</button>
-          <button class="btn btn-sucess">Controle</button>
-        </div>
-      </div>
-       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqamfzWp3WFWBasP48uYpX6HFo5DZ9TPjF9Q0g2TaoWSOP3Kl_E6Cm5qz5E4OXXocAY1g&usqp=CAU" alt="Café">
-        <div class="card-content">
-          <h2>Café</h2>
-          <p>30 Und</p>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-dark">Info</button>
-          <button class="btn btn-sucess">Controle</button>
-        </div>
-      </div>
-       <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqamfzWp3WFWBasP48uYpX6HFo5DZ9TPjF9Q0g2TaoWSOP3Kl_E6Cm5qz5E4OXXocAY1g&usqp=CAU" alt="Café">
-        <div class="card-content">
-          <h2>Café</h2>
-          <p>30 Und</p>
-        </div>
-        <div class="card-actions">
-          <button class="btn btn-dark">Info</button>
-          <button class="btn btn-sucess">Controle</button>
-        </div>
-      </div>
-    </div>
+      </td>
+    </tr>
+  </table>
+</div>
     
 
 
