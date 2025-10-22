@@ -254,34 +254,15 @@ button.controlar:hover {
 
 
 
-   <div class="cards-section">
+<div class="cards-section">
   <h2 class="titulo-secao">Lista de Produtos</h2>
-
   <table class="tabela-cards">
-
-    <tr>
-      <td>
-        <div class="card">
-          <img src="https://s2-g1.glbimg.com/cSwyuz3Gg0t6TBKAHzkq68v81r4=/0x0:4479x2686/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/A/0/8Tz12FRCKuANsWHn0bYQ/adobestock-1210523825-1-.jpeg" alt="Café">
-          <h3>Café</h3>
-          <p>30 Und</p>
-          <div class="botoes">
-            <button class="info">INFO</button>
-            <button class="controlar">CONTROLAR</button>
-          </div>
-        </div>
-      </td>
-    </tr>
+    {{ cards_html|safe }}
   </table>
 </div>
-    
 
 
-
-
-
-  </main>
-
+ </main>
   <footer class="footer">
     Qualquer dúvida ou problema, não me ligue!!!
   </footer>
