@@ -55,11 +55,8 @@ def List_Prooduct(request):
             "quantidade": 50,
             "imagem": "https://img.freepik.com/fotos-gratis/arroz-cru-em-tigela-de-madeira_1150-37517.jpg"
         },
-        {
-            "nome": "Feijão",
-            "quantidade": 20,
-            "imagem": "https://img.freepik.com/fotos-gratis/feijao-preto-cru-em-tigela-de-madeira_1150-37522.jpg"
-        },
+       
+        
     ]
 
     html_cards = "<tr>"

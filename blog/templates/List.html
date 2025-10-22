@@ -32,12 +32,34 @@
       background-color: var(--secondary-bc);
       color: var(--secondary-tc);
     }
+    .nav h1::after {
+    content: '';
+    /* width: 70%; */
+    height: 2px;
+    margin: auto;
+    display: block;
+    background-color: #acacac;
+}
 
     .nav h1 {
       margin: 0;
       font-size: 26px;
       text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: var(--secondary-bc);
+      color: var(--secondary-tc);
     }
+    .nav-logo h1::after {
+    content: '';
+    width: 70%;
+    height: 2px;
+    margin: auto;
+    display: block;
+    background-color: #acacac;
+}
 
     .nav-btn {
       border: 2px solid white;
