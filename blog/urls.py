@@ -1,13 +1,14 @@
 # blog/urls.py
 from django.urls import path
 from . import views
+from .views import List_Product
 #from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
 
 urlpatterns = [
     path('', views.home, name='Home'),
-    path('Login/', views.Login, name='Login'),  # rota raiz
-    path('ListProduct/', views.List_Prooduct, name='ListOgject'),  # opcional
+    path('Login/', views.Login, name='Login'),
+    path('ListProduct/', List_Product, name='ListOgject'),
     path('produto/<str:lanche>/', views.exibir_produto, name='exibir_produto')
 ]
     

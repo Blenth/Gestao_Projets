@@ -9,7 +9,7 @@ def home(request):
 def Login(request):
     return render(request, 'Login.html')
 
-def List_Prooduct(request):
+def List_Product(request):
     produtos = [
         {
             "nome": "Café",
