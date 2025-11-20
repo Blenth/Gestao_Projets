@@ -1,14 +1,9 @@
-# blog/views.py
 from django.shortcuts import render
-from django.shortcuts import render, get_object_or_404
-
-
+from django.urls import reverse
 def home(request):
     return render(request, 'Cadastro.html')
-
 def Login(request):
     return render(request, 'Login.html')
-
 def List_Product(request):
     produtos = [
         {
@@ -39,47 +34,30 @@ def List_Product(request):
     ]
     html_cards = "<tr>"
     for i, p in enumerate(produtos, start=1):
+        url = reverse('ListObject', kwargs={
+            'nome': p['nome'],
+            'imagem': p['imagem']
+        })
         html_cards += f"""
-        <td>
-          <div class="card">
-            <img src="{p['imagem']}" alt="{p['nome']}">
-            <h3>{p['nome']}</h3>
-            <p>{p['quantidade']} Und</p>
-            <div class="botoes">
-              <button class="info">INFO</button>
-              <button class="controlar">CONTROLAR</button>
-            </div>
-          </div>
-        </td>
+            <td>
+                <div class="card">
+                    <img src="{p['imagem']}" alt="{p['nome']}">
+                    <h3>{p['nome']}</h3>
+                    <p>{p['quantidade']} Und</p>
+                    <div class="botoes">
+                        <button class="info">INFO</button>
+                        <button onclick="window.location.href='{url}'" class="controlar">CONTROLAR</button>
+                    </div>
+                </div>
+            </td>
         """
-        if i % 5 == 0 and i < len(produtos):
+        if i % 5 == 0:
             html_cards += "</tr><tr>"
     html_cards += "</tr>"
     return render(request, 'list.html', {'cards_html': html_cards})
-
-
-
-
-
-def exibir_produto(request, lanche):
-    img = Comida(lanche)
+def exibir_produto(request, nome, imagem):
     contexto = {
-        'numero_produto': lanche,
-        'objeto_imagem_url' : img
-        }
+        'numero_produto': nome,
+        'objeto_imagem_url': imagem
+    }
     return render(request, 'produto.html', contexto)
-
-
-
-def Comida(status_code: str) -> str:
-    match status_code:
-        case "cafe":
-            return "https://static.vecteezy.com/ti/fotos-gratis/t2/25282026-estoque-do-misturar-uma-copo-cafe-cafe-com-leite-mais-motivo-topo-visao-comidagrafia-generativo-ai-foto.jpg"
-        case "pao":
-            return "https://guiadacozinha.com.br/wp-content/uploads/2018/10/paofrancesfolhado.jpg"
-        case "suco":
-            return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFmmPGSvmdIzDXKXhcRcXwgxQTrtju5mo3w&s"
-        case "V8":
-            return "https://www.motortrend.com/uploads/sites/21/2012/11/1211phr-01-the-biggest-big-block-on-the-planet-1005ci-engine.jpg?w=768&width=768&q=75&format=webp"
-        case _:  
-            return "Unknown Status"
