@@ -55,7 +55,7 @@ def List_Product(request):
         if i % 5 == 0 and i < len(produtos):
             html_cards += "</tr><tr>"
     html_cards += "</tr>"
-    return render(request, 'List.html', {'cards_html': html_cards})
+    return render(request, 'list.html', {'cards_html': html_cards})
 
 
 
