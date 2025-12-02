@@ -6,3 +6,5 @@ from blog.models import Post, Pessoa
 
 admin.site.register(Post)
 admin.site.register(Pessoa)
+
+#
